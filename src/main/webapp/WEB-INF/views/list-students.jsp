@@ -32,8 +32,8 @@
 			<c:forEach items="${ students }" var="student">
 			<tr>
 				<td><c:out value="${student.name }"></c:out></td>
-				<td><c:out value="${student.category }"></c:out></td>
-				<td><c:out value="${student.author }"></c:out></td>
+				<td><c:out value="${student.country }"></c:out></td>
+				<td><c:out value="${student.department }"></c:out></td>
 				<td></td>
 			</tr>	
 			</c:forEach>

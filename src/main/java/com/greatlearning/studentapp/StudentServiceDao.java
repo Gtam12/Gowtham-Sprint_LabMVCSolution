@@ -22,16 +22,20 @@ public class StudentServiceDao implements StudentService {
 	@Autowired
 	public StudentServiceDao(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
+		
+		try {
 		this.session = sessionFactory.getCurrentSession();
+		}
+		catch(Exception e) {
+		 this.session = this.sessionFactory.openSession();
+		}
 	}
 
 	
 	@Transactional
 	public List<Student> findAllStudents() {
 	
-		Transaction tx = session.beginTransaction();
-	    List<Student> students = session.createQuery("from students", Student.class).list();
-	    tx.commit();
+	    List<Student> students = session.createQuery("from Student", Student.class).list();
 	    return students;
 
 	}
@@ -45,18 +49,14 @@ public class StudentServiceDao implements StudentService {
 	}
 
     @Transactional
-	public void saveStudent(Student student) {
-    Transaction tx = session.beginTransaction(); 	
+	public void saveStudent(Student student) {	
 	session.saveOrUpdate(student);
-    tx.commit();
 	}
 
     @Transactional
 	public void deleteStudentById(int id) {
-		Transaction tx = session.getTransaction();
 		Student student = session.get(Student.class, id);
 		session.delete(student);
-		tx.commit();
 		
 	}
 
