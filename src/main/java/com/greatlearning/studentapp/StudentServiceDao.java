@@ -2,11 +2,13 @@ package com.greatlearning.studentapp;
 
 import java.util.*;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 
 @Repository
@@ -17,7 +19,7 @@ public class StudentServiceDao implements StudentService {
 	private Session session;
 	
 	
-	
+	@Autowired
 	public StudentServiceDao(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 		this.session = sessionFactory.getCurrentSession();
