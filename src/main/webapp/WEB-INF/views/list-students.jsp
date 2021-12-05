@@ -24,18 +24,16 @@
 				<th>Name</th>
 				<th>Department</th>
 				<th>Country</th>
-				<th>Actions</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<c:forEach items="${ students }" var="student">
-			<tr>
-				<td><c:out value="${student.name }"></c:out></td>
-				<td><c:out value="${student.country }"></c:out></td>
-				<td><c:out value="${student.department }"></c:out></td>
-				<td></td>
-			</tr>	
+				<tr>
+					<td><c:out value="${student.name }"></c:out></td>
+					<td><c:out value="${student.department }"></c:out></td>
+					<td><c:out value="${student.country }"></c:out></td>
+				</tr>
 			</c:forEach>
 		</tbody>
 
