@@ -18,6 +18,11 @@
 
 	<h1>Library Management System</h1>
 
+	<h2>
+		List of students <a href="/lmsv3/students/new"
+			class="btn btn-primary btn-sm float-end">Add a student</a>
+	</h2>
+
 	<table class="table table-bordered table-srtiped">
 		<thead>
 			<tr>
@@ -33,6 +38,11 @@
 					<td><c:out value="${student.name }"></c:out></td>
 					<td><c:out value="${student.department }"></c:out></td>
 					<td><c:out value="${student.country }"></c:out></td>
+
+					<td><a href="/lmsv3/students/edit?id=${student.id}"
+						class="btn btn-secondary btn-sm">Update</a> <a
+						href="/lmsv3/students/delete?id=${student.id}"
+						class="btn btn-danger btn-sm">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

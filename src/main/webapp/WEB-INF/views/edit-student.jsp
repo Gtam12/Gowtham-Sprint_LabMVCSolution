@@ -8,12 +8,12 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Debate Event</h1>
+			<h1>Students</h1>
 			<hr />
 			
 			<h2><c:out value="${newStudent ? 'Add a new student' : 'Update student'}" /></h2>
 			
-			<form action="/studentapp/students/save" method="post">
+			<form action="/lmsv3/students/save" method="post">
 			  <div class="mb-3">
 			    <input type="hidden" class="form-control" name="id" value="${student.id}">
 			  </div>
@@ -32,7 +32,7 @@
 			  
 			  <button type="submit" class="btn btn-primary">Submit</button>
 			  
-			  <a href="/studentapp/students/list" class="btn btn-danger">Cancel</a>
+			  <a href="/lmsv3/students/list" class="btn btn-danger">Cancel</a>
 			</form>
 		</div>
 		
